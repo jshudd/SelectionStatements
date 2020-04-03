@@ -7,23 +7,33 @@ namespace SelectionStatements
         static void Main(string[] args)
         {
             //Michael's code
-            var r = new Random();
-            var favNumber = r.Next(0, 1001);
+            Console.WriteLine("Welcome to the number guessing game!");
+            Console.WriteLine("See if you can guess the correct number!");
+            Console.WriteLine("What is the upper limit for the range of the number?");
 
-            Console.WriteLine("Guess a number between 0 & 1001.");
-            var userInput = int.Parse(Console.ReadLine());
+            var userResponse = Console.ReadLine();
+
+            var upperLimit = int.Parse(userResponse);
             
-            if (userInput < favNumber)
+            var random = new Random();
+            var number = random.Next(1, upperLimit);
+
+            Console.WriteLine("Input your guess:");
+
+            var guess = int.Parse(Console.ReadLine());
+
+            if (guess > number)
             {
-                Console.WriteLine($"{userInput} is too low.");
+                Console.WriteLine("Your guess is too high! Sorry!");
             }
-            else if (userInput > favNumber)
+            else if(guess < number)
             {
-                Console.WriteLine($"{userInput} is too high.");
+                Console.WriteLine("Your guess is too low! Sorry.");
             }
             else
             {
-                Console.WriteLine("Never mind");
+                ConsoleWriteLine("Correct!");
+
             }
         }
     }
