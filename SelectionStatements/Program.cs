@@ -9,7 +9,7 @@ namespace SelectionStatements
             Console.WriteLine("What is your favorite school subject?");
             var subject = Console.ReadLine();
 
-            switch(subject)
+            switch(subject) //.ToLower() removes case sensitivity
             {
                 case "science":
                     Console.WriteLine("I love Science, too!");
