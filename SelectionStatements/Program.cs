@@ -6,24 +6,35 @@ namespace SelectionStatements
     {
         static void Main(string[] args)
         {
-            //Michael's code
-            var r = new Random();
-            var favNumber = r.Next(0, 1001);
+            Console.WriteLine("What is your favorite school subject?");
+            var subject = Console.ReadLine();
 
-            Console.WriteLine("Guess a number between 0 & 1001.");
-            var userInput = int.Parse(Console.ReadLine());
-            
-            if (userInput < favNumber)
+            switch(subject)
             {
-                Console.WriteLine($"{userInput} is too low.");
-            }
-            else if (userInput > favNumber)
-            {
-                Console.WriteLine($"{userInput} is too high.");
-            }
-            else
-            {
-                Console.WriteLine("Never mind");
+                case "science":
+                    Console.WriteLine("I love Science, too!");
+                    break;
+
+                case "math":
+                    Console.WriteLine("Ugh, I hate Math!");
+                    break;
+
+                case "PE":
+                    Console.WriteLine("PE is definitely a lot of fun!");
+                    break;
+
+                case "history":
+                    Console.WriteLine("History is not too bad.");
+                    break;
+
+                case "literature":
+                    Console.WriteLine("Lit, huh? I guess you like to read a lot.");
+                    break;
+
+                default:
+                    Console.WriteLine("Well, you can like whatever you want.");
+                    break;
+
             }
         }
     }
